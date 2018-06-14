@@ -8,6 +8,7 @@
     [:html
      [:head]
      [:body
-      [:h1 {:class "header"}"clojure web app"]]]))
+      [:h1 "CLJ WEB APP"
+       [:a {:href "/page"} " link to ..."]]]]))
 
 
