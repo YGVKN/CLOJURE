@@ -1,14 +1,25 @@
 (ns app.views.index
-  (:require [garden.core :refer :all])
-  (:use hiccup.page hiccup.element))
+  (:require [clojure.string :as str]
+            [hiccup.page :as page]
+            [ring.util.anti-forgery :as util]))
 
-(defn index-page
+(def links
+  [:div.link
+   "["
+   [:a {:href "/"} "main"]
+   "]"])
+
+(defn header
+  [title]
+  [:head
+   [:title (str "Location" title)]
+   (page/include-css "/css/styles.css")])
+
+(defn index
   []
-  (html5
-    [:html
-     [:head]
-     [:body
-      [:h1 "CLJ WEB APP"
-       [:a {:href "/page"} " link to ..."]]]]))
-
+  (page/html5
+    (header "main")
+    links
+    [:h2 "main page"]
+    [:div.text "clojure web app"]))
 

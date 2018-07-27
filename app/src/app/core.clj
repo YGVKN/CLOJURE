@@ -1,15 +1,14 @@
 (ns app.core
   (:require [compojure.core :refer :all]
-            [compojure.handler :as handler]
             [compojure.route :as route]
-            [app.views.index :as index-page]
-            [app.views.page :as yet-page]))
+            [app.views.index :as index]
+            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
 
 (defroutes app-routes
-  (GET "/" [] (index-page/index-page))
-  (GET "/page" [] (yet-page/yet-another-page))
-  (route/resources "/")
-  (route/not-found "Page not found"))
+  (GET "/"
+   []
+   (index/index))
+  (route/not-found "Don't worry ,be happy,drink coffee"))
 
-(def handler
-  (handler/site app-routes))
+(def app
+  (wrap-defaults app-routes site-defaults))
