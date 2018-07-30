@@ -12,7 +12,7 @@
 (defn header
   [title]
   [:head
-   [:title (str "Location" title)]
+   [:title (str "Location " title)]
    (page/include-css "/css/styles.css")])
 
 (defn index
