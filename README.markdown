@@ -1,2 +1,2 @@
-# CLOJURE
-![CLOJURE](https://media.giphy.com/media/26xBFB9pA6Rjv2s7u/giphy.gif)
+# YGVKN.ZHUZHA.CLOJURE.WEB
+![CLOJURE.WEB](https://media.giphy.com/media/79VGM8vrzLISA/giphy.gif)
