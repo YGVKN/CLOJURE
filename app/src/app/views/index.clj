@@ -23,6 +23,3 @@
     links
     [:h2 "main page"]
     [:div.text "clojure web app"]))
-
-(g/css
-  [:body {:color "red"}])
