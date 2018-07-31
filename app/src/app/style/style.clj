@@ -4,5 +4,5 @@
             [garden.selectors :as s]
             [garden.stylesheet :as stylesheet]))
 
-(g/css
-  [:body {:color "red"}])
+(g/css {:output-to "resources/public/css/garden.css"}
+       [:a.pagelink {:color "deeppink"}])

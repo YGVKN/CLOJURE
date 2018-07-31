@@ -3,6 +3,7 @@
             [compojure.route :as route]
             [app.views.index :as index]
             [app.views.garden :as garden]
+            [app.views.page :as page]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
 
 (defroutes app-routes
@@ -13,6 +14,11 @@
  (GET "/css"
   []
   (garden/page))
+
+ (GET "/gencss"
+  []
+  (page/page))
+
 
  (route/not-found "Don't worry ,be happy,drink coffee"))
 

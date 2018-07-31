@@ -7,7 +7,8 @@
                  [hiccup "1.0.5"]
                  [garden "1.3.5"]
                  [ring/ring-defaults "0.3.2"]]
-  :plugins [[lein-ring "0.12.4"]]
+  :plugins [[lein-ring "0.12.4"]
+            [lein-garden "0.3.0"]]
   :ring {:handler app.core/app}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
