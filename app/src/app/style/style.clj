@@ -2,7 +2,10 @@
   (:require [garden.core :as g]
             [garden.units :as u]
             [garden.selectors :as s]
-            [garden.stylesheet :as stylesheet]))
+            [garden.stylesheet :as stylesheet]
+            [garden.def :refer [defstylesheet defstyle]]))
 
-(g/css {:output-to "resources/public/css/garden.css"}
-       [:a.pagelink {:color "deeppink"}])
+(defstylesheet screen
+            {:output-file "resources/public/garden.css"}
+            [:body {:background "pink"}]
+            [:a {:text-decoration "none"}])
