@@ -20,7 +20,7 @@
   (page/page))
 
 
- (route/not-found "Don't worry ,be happy,drink coffee"))
+ (route/not-found "Don't worry ,be happy,drink coffee and ZHUZHA"))
 
 (def app
   (wrap-defaults app-routes site-defaults))
