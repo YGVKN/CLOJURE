@@ -3,9 +3,7 @@
             [garden.units :as u]
             [garden.selectors :as s]
             [garden.stylesheet :as stylesheet]
-            [garden.def :refer [defstylesheet defstyle]]))
+            [garden.def :refer [defstylesheet defstyles]]))
 
-(defstylesheet screen
-            {:output-file "resources/public/garden.css"}
-            [:body {:background "pink"}]
-            [:a {:text-decoration "none"}])
+(defstyles styles
+ [:body {:background "violet"}])

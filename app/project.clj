@@ -9,11 +9,10 @@
                  [ring/ring-defaults "0.3.2"]]
   :plugins [[lein-ring "0.12.4"]
             [lein-garden "0.3.0"]]
-  :garden {:build [{
-                    :id "screen"
-                    :source-paths ["src/styles"]
-                    :stylesheet app.style.style/screen
-                    :compiler {:output-file "resources/screen.css"
+  :garden {:builds [{
+                    :source-paths ["src"]
+                    :stylesheet app.style.style/styles
+                    :compiler {:output-to "resources/public/css/garden.css"
                                :pretty-print? false}
                     }]}
   :ring {:handler app.core/app}
