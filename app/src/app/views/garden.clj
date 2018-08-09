@@ -6,18 +6,25 @@
                     [stylesheet :refer [at-media]]
                     [units :as u :refer [px pt em]]
                     [color :as color :refer [hsl rgb]]
-                    [def :refer [defstyles]])
-                    [ring.util.anti-forgery]))
+                    [def :refer [defstylesheet defstyles]])))
 (declare page-css)
-
+(def title "Clojure garden css")
 
 (defn page []
   (html5 [:head
-          [:title "css garden"]
+          [:meta {:charset "UTF-8"}]
+          [:title title]
           [:style {:type "text/css" } (page-css)]]
          [:body
-          [:a.link {:href "#"} "try garden"]]))
-;;try garden css
+          [:div.sphere  " Clojure garden"]]))
+
+
 (defn page-css []
-  (css [:body {:background "violet"}
-        [:a.link {:text-decoration "none"}]]))
+  (css [:body {:background "#fff" :margin 0 :padding 0 :box-sizing "border-box"}]
+        [:div.sphere
+         {:width (px 1111)
+          :height "100%"
+          :margin "0 auto"
+          :background-color "#ff72be"
+          :text-align "center"
+          :color "#fff"}]))

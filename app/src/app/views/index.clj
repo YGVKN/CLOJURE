@@ -1,11 +1,10 @@
 (ns app.views.index
   (:require [clojure.string :as str]
             [hiccup.page :as page]
-           ;; [garden.core :as g]
             [ring.util.anti-forgery :as util]))
 
 (def links
-  [:div.link
+  [:div.links
    "["
    [:a {:href "/"} "main"]
    "]"])
@@ -13,13 +12,15 @@
 (defn header
   [title]
   [:head
-   [:title (str "Location " title)]
-   (page/include-css "/css/styles.css")])
+   [:meta {:charset "UTF-8"}]
+   [:title (str "Here... " title)]
+   (page/include-css "/css/garden.css")])
 
 (defn index
   []
   (page/html5
     (header "main")
-    links
-    [:h2 "main page"]
-    [:div.text "web app"]))
+   [:body
+    [:div.sphere
+     [:div links]
+     [:div "main page"]]]))

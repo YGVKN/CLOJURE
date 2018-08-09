@@ -23,8 +23,6 @@
                                                      [:li :a] (html/content caption)
                                                      [:li :a] (html/set-attr :href url)))
 
-
-
 (html/defsnippet content "templates/content.html"
   [:.content]
   [replacements]
@@ -37,6 +35,7 @@
                      (html/append (content {:header "This is an interpolated header"
                                             :content_part_1 "Use this document as a way to quick start any new project"
                                             :content_part_2 "All you get is this message and a barebones HTML document"}))))
+
 
 (defn index-page
   [request]
