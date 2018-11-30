@@ -1,0 +1,4 @@
+function echo ()
+{
+	alert('clojure');
+}
