@@ -9,6 +9,5 @@
   (GET "/" [] (view/index))
   (route/resources "/")
   (route/not-found (not-found/not-found)))
-
 (def handler
   (handler/site app))

@@ -12,7 +12,7 @@
      [:meta {:charset "utf-8"}]
      [:title "clojure web app"]
      (html5/include-css "./css/styles.css")
-     (html5/include-js "./js/js.js")]
+     (html5/include-js "./js/index.js")]
     [:body
      [:header {:class "header"} "header"]
      [:div {:class "sphere"}
