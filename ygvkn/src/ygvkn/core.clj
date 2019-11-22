@@ -5,7 +5,7 @@
 (defn handler [req]
   {:status 200
    :headers {"Content-Type", "text/plain"}
-   :body "Clojure app"})
+   :body "App in kube"})
 
 (defn -main []
   (jetty/run-jetty handler {:port (Integer. 8888)}))
