@@ -1,8 +1,15 @@
 (ns service.out
   (:require
     [ring.adapter.jetty :as jetty]
-    [hiccup.page :refer [doctype html5]])
+    [hiccup.page :refer [doctype html5]]
+    [garden.core :refer [css]])
   (:gen-class))
+
+
+
+(defn styles []
+ (css
+  [:body {:color "violet"}]))
 
 (defn page [title content]
  (html5
@@ -11,7 +18,8 @@
    [:head
     [:meta {:charset "utf-8"}
      [:title title]]]
-   [:body content]]))
+   [:body content
+    [:style (styles)]]]))
 
 
 (defn index [req]
@@ -24,5 +32,4 @@
 (defn -main []
  (let [port (Integer/parseInt (or (System/getenv "PORT") "8888"))]
   (jetty/run-jetty #'index {:port port :join? false})))
-
 ;lein run

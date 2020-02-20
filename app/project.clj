@@ -18,6 +18,13 @@
          :auto-reload? true
          :port 8888}
 
+  :garden {:builds [{:id "styles"
+                     :source-paths ["src"]
+                     :stylesheet service.out/styles
+                     :compiler {:output-to "resources/public/styles.css"
+                                :pretty-print? false}}]}
+  :prep-tasks [["garden" "once"]]
+
   :main service.out
 ;;  :aot [service.out]
   :aot :all
