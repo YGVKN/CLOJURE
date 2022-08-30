@@ -15,17 +15,21 @@
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [org.clojure/tools.logging "1.2.4"]
                  [org.clojure/tools.namespace "1.3.0"]
+                 [info.sunng/ring-jetty9-adapter "0.17.7"]
                  [compojure "1.7.0"]]
 
 
-  :plugins [[lein-ancient "0.7.0"]]
-  :main example.core
-  :aot [example.core]
+  :plugins [[lein-ancient "0.7.0"]
+            [lein-cljfmt "0.9.0"]]
+  :main ^:skip-aot example.core
+  ;:aot [example.core]
   ;:aot :all
   :auto-clean true
   :target-path "target/%s"
+  :profile {:uberjar {:aot :all}}
   :jar-name "example.jar"
   :uberjar-name "example-standalone.jar"
+  ;:warn-on-reflection true
 
 
   :jvm-opts ["-Xmx3g"]
