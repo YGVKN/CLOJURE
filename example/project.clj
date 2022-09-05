@@ -32,7 +32,7 @@
   ;:warn-on-reflection true
 
 
-  :jvm-opts ["-Xmx3g"]
+  :jvm-opts ["-Xms256m" "-Xmx1g"]
 
   :repl-options {:welcome (println "\u001b[35mYGVKN \u001b[36m\u03bb\u001b[36m")
                  :init-ns example.core
