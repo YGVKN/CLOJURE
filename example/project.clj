@@ -13,10 +13,11 @@
 
 
   :dependencies [[org.clojure/clojure "1.11.1"]
-                 [org.clojure/tools.logging "1.2.4"]
                  [org.clojure/tools.namespace "1.3.0"]
-                 [info.sunng/ring-jetty9-adapter "0.17.7"]
-                 [compojure "1.7.0"]]
+                 [org.clojure/tools.logging "1.2.4"]
+                 [ch.qos.logback/logback-core "1.2.3"]
+                 [ch.qos.logback/logback-classic "1.2.3"]
+                 [info.sunng/ring-jetty9-adapter "0.17.7"]]
 
 
   :plugins [[lein-ancient "0.7.0"]
@@ -29,7 +30,6 @@
   :profile {:uberjar {:aot :all}}
   :jar-name "example.jar"
   :uberjar-name "example-standalone.jar"
-  ;:warn-on-reflection true
 
 
   :jvm-opts ["-Xms256m" "-Xmx1g"]
