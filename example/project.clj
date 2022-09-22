@@ -21,7 +21,8 @@
 
 
   :plugins [[lein-ancient "0.7.0"]
-            [lein-cljfmt "0.9.0"]]
+            [lein-cljfmt "0.9.0"]
+            [cider/cider-nrepl "0.24.0"]]
   :main ^:skip-aot example.core
   ;:aot [example.core]
   ;:aot :all
