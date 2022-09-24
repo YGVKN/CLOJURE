@@ -13,6 +13,8 @@
 
 
   :dependencies [[org.clojure/clojure "1.11.1"]
+                 [ring/ring-json "0.5.1"]
+                 [compojure "1.7.0"]
                  [org.clojure/tools.namespace "1.3.0"]
                  [org.clojure/tools.logging "1.2.4"]
                  [ch.qos.logback/logback-core "1.2.3"]
@@ -23,8 +25,9 @@
   :plugins [[lein-ancient "0.7.0"]
             [lein-cljfmt "0.9.0"]
             [cider/cider-nrepl "0.28.5"]]
-  :main ^:skip-aot example.core
-  ;:aot [example.core]
+  :main example.main
+  ;:main ^:skip-aot example.core
+  :aot [example.main]
   ;:aot :all
   :auto-clean true
   :target-path "target/%s"
@@ -36,7 +39,7 @@
   :jvm-opts ["-Xms256m" "-Xmx1g"]
 
   :repl-options {:welcome (println "\u001b[35mYGVKN \u001b[36m\u03bb\u001b[36m")
-                 :init-ns example.core
+                 :init-ns example.main
                  :timeout 40000
                  :host "0.0.0.0"
                  :port 4444})
