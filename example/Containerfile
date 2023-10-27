@@ -1,9 +1,0 @@
-FROM docker.io/clojure:latest
-MAINTAINER YGVKN
-LABEL YGVKN ZHUZHA
-RUN git clone 
-WORKDIR /
-HEALTHCHECK --interval=8m --timeout=4s CMD cat /etc/*release* > /tmp/health_check || exit 1
-STOPSIGNAL SIGTERM
-ENTRYPOINT ["tail"]
-CMD ["-f", "/dev/null","2>&1"]
